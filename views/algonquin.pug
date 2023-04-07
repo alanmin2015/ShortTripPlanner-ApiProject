@@ -1,0 +1,120 @@
+extends layout 
+
+block main-content 
+  h1.page-title The Algonquin Park! 
+  div.intro &nbsp &nbsp Welcome to Algonquin Park, a natural paradise located in central Ontario, Canada. Spanning over 7,600 square kilometers, this stunning park is home to a diverse range of wildlife, including moose, black bears, and wolves. The rugged landscape is characterized by towering forests, pristine lakes, and winding rivers, providing endless opportunities for outdoor adventure. Whether you're looking to canoe down the winding waterways, hike through the scenic trails, or simply relax and enjoy the beauty of nature, Algonquin Park has something for everyone. Come experience the breathtaking beauty and tranquility of Algonquin Park and make memories that will last a lifetime.
+  div.content          
+     div.stay-box
+       h3 Here is the most popular Airbnb near Algonquin Park
+       div.stay1
+         img(src=stay.data[0].images[0], alt='Picture 1', id='present-picture1', width="200")
+         <br>
+         div.stayB
+          button#prev-btn1 Previous
+          button#next-btn1 Next
+         div.stayDetails 
+           h3 #{stay.data[0].listingName}
+           ul 
+             li Rating: #{stay.data[0].avgRating}
+             li Bedrooms: #{stay.data[0].bedrooms} 
+             li Bathrooms: #{stay.data[0].bathrooms}
+             li Price: #{stay.data[0].accessibilityLabel}
+       div.stay2
+         img(src=stay.data[1].images[0], alt='Picture 2', id='present-picture2', width="200")
+         <br>
+         div.stayB
+          button#prev-btn2 Previous
+          button#next-btn2 Next
+         div.stayDetails 
+           h3 #{stay.data[1].listingName}
+           ul 
+             li Rating: #{stay.data[1].avgRating}
+             li Bedrooms: #{stay.data[1].bedrooms}
+             li Bathrooms: #{stay.data[1].bathrooms}
+             li Price: #{stay.data[1].accessibilityLabel}
+       div.stay3
+         img(src=stay.data[2].images[1], alt='Picture 3', id='present-picture3', width="200")
+         <br>
+         div.stayB
+          button#prev-btn3 Previous
+          button#next-btn3 Next
+         div.stayDetails 
+           h3 #{stay.data[2].listingName}
+           ul 
+             li Rating: #{stay.data[2].avgRating}
+             li Bedrooms: #{stay.data[2].bedrooms}
+             li Bathrooms: #{stay.data[2].bathrooms}
+             li Price: #{stay.data[2].accessibilityLabel}  
+
+     div.weather 
+         h3 Here is the 5-day weather forecast for Algonquin Park: 
+         table
+           tr
+             th Date
+             th Weather
+             th Temperature
+             th Icon
+             each row in [1, 2, 3, 4, 5]
+                 tr
+                     td #{weather.list[(8*row-4)].dt_txt.substring(0, 10)}
+                     td #{weather.list[(8*row-4)].weather[0].main}
+                     td #{Math.ceil(weather.list[(8*row-4)].main.temp)} °C
+                     td 
+                      img(src="http://openweathermap.org/img/wn/" + weather.list[(8 * row - 4)].weather[0].icon + ".png", alt="Weather icon")
+
+     script.
+      const stay1 = !{JSON.stringify(stay)};
+      const pictures1 = [stay1.data[0].images[0], stay1.data[0].images[1],stay1.data[0].images[2]];
+      const pictures2 = [stay1.data[1].images[0], stay1.data[1].images[1],stay1.data[1].images[2]];
+      const pictures3 = [stay1.data[2].images[0], stay1.data[2].images[1],stay1.data[2].images[2]];
+      let currentIndex1 = 0;
+      let currentIndex2 = 0;
+      let currentIndex3 = 0;
+      
+      const prevButton1 = document.querySelector('#prev-btn1');
+      const nextButton1 = document.querySelector('#next-btn1');
+      const picture1 = document.querySelector('#present-picture1');
+      function showPicture1() {picture1.src = pictures1[currentIndex1];}
+
+      const prevButton2 = document.querySelector('#prev-btn2');
+      const nextButton2 = document.querySelector('#next-btn2');
+      const picture2 = document.querySelector('#present-picture2');
+      function showPicture2() {picture2.src = pictures2[currentIndex2];}
+      
+      const prevButton3 = document.querySelector('#prev-btn3');
+      const nextButton3 = document.querySelector('#next-btn3');
+      const picture3 = document.querySelector('#present-picture3');
+      function showPicture3() {picture3.src = pictures3[currentIndex3];}
+
+      prevButton1.addEventListener('click', () => {
+      currentIndex1 = (currentIndex1 === 0) ? pictures1.length - 1 : currentIndex1 - 1;
+      showPicture1();
+       });
+
+      prevButton2.addEventListener('click', () => {
+      currentIndex2 = (currentIndex2 === 0) ? pictures2.length - 1 : currentIndex2 - 1;
+      showPicture2();
+       });
+
+      prevButton3.addEventListener('click', () => {
+      currentIndex3 = (currentIndex3 === 0) ? pictures3.length - 1 : currentIndex3 - 1;
+      showPicture3();
+       });
+
+      nextButton1.addEventListener('click', () => {
+      currentIndex1 = (currentIndex1 === pictures1.length - 1) ? 0 : currentIndex1 + 1;
+      showPicture1();
+       });
+        showPicture1();
+
+      nextButton2.addEventListener('click', () => {
+      currentIndex2 = (currentIndex2 === pictures2.length - 1) ? 0 : currentIndex2 + 1;
+      showPicture2();
+       });
+        showPicture2();
+
+      nextButton3.addEventListener('click', () => {
+      currentIndex3 = (currentIndex3 === pictures3.length - 1) ? 0 : currentIndex3 + 1;
+      showPicture3();
+       });
+        showPicture3();

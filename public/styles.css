@@ -1,0 +1,280 @@
+/* Set the font and background color for the page */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* Center the main content block */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.starter{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+/* Style the main content heading */
+main h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0077c0;
+}
+
+/* Style the main content paragraphs */
+main p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Style the popular destination section */
+.destination {
+  display: flex;
+ 
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style each destination box */
+.destination > div {
+  margin: 10px;
+  text-align: center;
+}
+
+/* Style the destination image */
+.destination img {
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/* Style the destination name link */
+.destination a {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0077c0;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Style the destination name link on hover */
+.destination a:hover {
+  color: #005fa3;
+}
+
+/* Details Page Style */
+.page-title{
+  margin-left: 5%;
+}
+
+.intro{
+  margin-left: 50px;
+  margin-right: 100px;
+}
+.content {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+ margin-left: 30px;
+}
+
+.stay-box {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: lightgoldenrodyellow;
+  max-width: 40%;
+}
+
+.stay-box h3 {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0;
+  text-align: left;
+  color: #333;
+}
+
+.stay-box img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.stay-box button {
+  display: flexbox;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.stay-box button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+ .stayB {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+} 
+
+.stay-box div h3 {
+  margin: 0;
+  text-align: left;
+  color: #333;
+}
+
+.stay-box div ul {
+  padding-left: 20px;
+  text-align: left;
+  font-size: 18px;
+  color: #555;
+}
+
+.stayDetails {
+   margin-left: 20px;
+}
+.stay-box div ul li {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #666;
+}
+
+.stay1,.stay2,.stay3{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stay1{
+  margin-top: 10px;
+}
+
+.weather{
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: lightgoldenrodyellow;
+  max-width: 40%;
+  height:fit-content;
+}
+
+table{
+  background-color: white;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden; 
+  width: 90%;
+}
+
+tr {
+  border: 1px solid #ccc;
+}
+
+td, th {
+  padding-left: 15px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+th{
+  text-align: left;
+}
+
+div.weather img{
+  filter: brightness(70%) contrast(200%);
+}
+
+header{
+background-color: rgba(50, 50, 223, 0.719);
+margin-top: -20px;
+width: 100%;
+height: 130px;
+}
+
+#site-name{
+  color: white;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+
+footer{
+background-color: rgba(50, 50, 223, 0.719);
+width: 100%;
+height: 50px;
+}
+
+footer p{
+  color: white;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+/* Nav Bar Style */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -25px;
+  margin-left: 50px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  text-decoration: none;
+}
+
+header a:hover {
+  background-color: rgb(144, 227, 238);
+}
+
+.header-content  {
+  display: flex;
+}
+header img{
+  height: 60px;
+  padding-top: 30px;
+  padding-left: 20px;
+}
